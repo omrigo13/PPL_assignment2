@@ -1,18 +1,36 @@
 (define append 
   (lambda(lst1 lst2)
-      @TODO
+      (if (eq? lst1 '())
+        lst2
+        (cons (car lst1)(append (cdr lst1) lst2))                 
+       )
   )
 )
 
 (define reverse 
   (lambda (lst)
-        @TODO
+      (if (eq? lst '())
+        '()
+        (append (reverse (cdr lst)) (list (car lst)))                 
+       )
   )
+)
+
+(define duplicate-item
+   (lambda(item dup-count)
+      (if (= dup-count 0)
+      '()
+      (append (cons item '()) (duplicate-item item (- dup-count 1)))
+      )
+   )
 )
 
 (define duplicate-items
    (lambda(lst dup-count)
-      @TODO
+      (if (eq? lst '())
+      lst
+      (append (duplicate-item (car lst) (car dup-count)) (duplicate-items (cdr lst) (append (cdr dup-count) (cons (car dup-count) '()))))
+      )
    )
 )
 
