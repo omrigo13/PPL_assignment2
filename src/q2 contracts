@@ -32,4 +32,12 @@ Q2.3
 
 Q2.4
 
+
+
 Q2.5
+
+; Signature: compose-n(f, n)
+; Type: [ (Number -> Number)*Number -> (Number -> Number) ]
+; Purpose: given an unary function (f) and a number (n) and returns the closure of the n-th self-composition of f
+; Pre-conditions: n >= 0
+; Tests: ((compose-n (lambda (x) (* 2 x)) 3) 3) => 24, ((compose-n (lambda (x) (+ 2 x)) 2) 3) => 7

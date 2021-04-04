@@ -27,19 +27,19 @@ describe('Q2 Tests', () => {
         expect(evalP(`(L3`+q2+`(duplicate-items (list 1 2 3 4) (list 1 1) ))`)).to.deep.equal(makeOk(listPrim([1,2,3,4])));
     }
     );
-    // it(`payment`,()=>
-    // {
-    //     expect(evalP(`(L3`+q2+`(payment 10 (list 5 10)))`)).to.deep.equal(makeOk(2));
-    //     expect(evalP(`(L3`+q2+`(payment 5 (list 1 2)))`)).to.deep.equal(makeOk(3));
-    //     expect(evalP(`(L3`+q2+`(payment 5 (list 1 2 5)))`)).to.deep.equal(makeOk(4));
-    //     expect(evalP(`(L3`+q2+`(payment 5 '()))`)).to.deep.equal(makeOk(0));
+    it(`payment`,()=>
+    {
+        expect(evalP(`(L3`+q2+`(payment 10 (list 5 10)))`)).to.deep.equal(makeOk(2));
+        expect(evalP(`(L3`+q2+`(payment 5 (list 1 2)))`)).to.deep.equal(makeOk(3));
+        expect(evalP(`(L3`+q2+`(payment 5 (list 1 2 5)))`)).to.deep.equal(makeOk(4));
+        expect(evalP(`(L3`+q2+`(payment 5 '()))`)).to.deep.equal(makeOk(0));
 
-    // }
-    // );
-    // it(`"compose-n`,()=>
-    // {
-    //     expect(evalP(`(L3`+q2+`((compose-n (lambda(x) (+ 2 x))2) 3))`)).to.deep.equal(makeOk(7));
-    //     expect(evalP(`(L3`+q2+`((compose-n (lambda(x) (* 2 x))2) 3))`)).to.deep.equal(makeOk(12));
-    // });
+    }
+    );
+    it(`"compose-n`,()=>
+    {
+        expect(evalP(`(L3`+q2+`((compose-n (lambda(x) (+ 2 x))2) 3))`)).to.deep.equal(makeOk(7));
+        expect(evalP(`(L3`+q2+`((compose-n (lambda(x) (* 2 x))2) 3))`)).to.deep.equal(makeOk(12));
+    });
 });
 

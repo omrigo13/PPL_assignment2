@@ -43,6 +43,8 @@
                                
 (define compose-n
   (lambda( f n)
-        @TODO
+    (if (= n 0) 1
+    (if (= n 1) f
+    (lambda (x) (f ((compose-n f (- n 1)) x)))))
   )
 )
