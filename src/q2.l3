@@ -34,10 +34,26 @@
    )
 )
 
+(define empty?
+  (lambda (lst)
+    (eq? lst '()))
+ )
+
+(define remove-duplicates
+  (lambda (num-to-remove lst)
+    (if (empty? lst) '()
+      (if (= (car lst) num-to-remove) (remove-duplicates num-to-remove (cdr lst))
+      (append (list(car lst)) (remove-duplicates num-to-remove (cdr lst)))))
+  )
+)
 
 (define payment
   (lambda (n coins-lst)
-        @TODO
+    (if (= n 0) 1
+      (if (< n 0) 0
+        (if (empty? coins-lst) 0
+        (+ (payment n (remove-duplicates (car coins-lst) (cdr coins-lst)))
+          (payment (- n (car coins-lst)) (cdr coins-lst))))))
   )
 )
                                

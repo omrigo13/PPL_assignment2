@@ -29,9 +29,9 @@ describe('Q2 Tests', () => {
     );
     it(`payment`,()=>
     {
-        expect(evalP(`(L3`+q2+`(payment 10 (list 5 10)))`)).to.deep.equal(makeOk(2));
-        expect(evalP(`(L3`+q2+`(payment 5 (list 1 2)))`)).to.deep.equal(makeOk(3));
-        expect(evalP(`(L3`+q2+`(payment 5 (list 1 2 5)))`)).to.deep.equal(makeOk(4));
+        expect(evalP(`(L3`+q2+`(payment 10 (list 5 5 10)))`)).to.deep.equal(makeOk(2));
+        expect(evalP(`(L3`+q2+`(payment 5 (list 1 1 1 2 2 5 10)))`)).to.deep.equal(makeOk(3));
+        expect(evalP(`(L3`+q2+`(payment 0 (list 1 2 5)))`)).to.deep.equal(makeOk(1));
         expect(evalP(`(L3`+q2+`(payment 5 '()))`)).to.deep.equal(makeOk(0));
 
     }
