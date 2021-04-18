@@ -42,4 +42,3 @@ describe('Q2 Tests', () => {
         expect(evalP(`(L3`+q2+`((compose-n (lambda(x) (* 2 x))2) 3))`)).to.deep.equal(makeOk(12));
     });
 });
-
